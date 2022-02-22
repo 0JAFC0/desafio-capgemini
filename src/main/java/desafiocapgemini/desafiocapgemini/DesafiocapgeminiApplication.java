@@ -6,6 +6,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import desafiocapgemini.VerificadorDeSenha;
+
 @SpringBootApplication
 public class DesafiocapgeminiApplication implements CommandLineRunner{
 
@@ -15,7 +17,8 @@ public class DesafiocapgeminiApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		executaQuestao1(6);
+		//executaQuestao1(6);
+		executaQuestao2("Ya3");
 	}
 
 	public static void executaQuestao1(int qtd){
@@ -25,6 +28,9 @@ public class DesafiocapgeminiApplication implements CommandLineRunner{
 		Arrays.stream(escada).forEach(System.out::println);
 	}
 
-	
+	public static void executaQuestao2(String senha){
+		VerificadorDeSenha verificadorDeSenha = new VerificadorDeSenha(senha);
 
+		System.out.println(verificadorDeSenha.resultado());
+	}
 }
