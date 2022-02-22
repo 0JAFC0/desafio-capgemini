@@ -1,4 +1,4 @@
-package desafiocapgemini;
+package desafiocapgemini.desafiocapgemini;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,13 +11,13 @@ public class VerificadorDeSenha {
 
     public String resultado(){
         if(verifica()){
-            return "a senha é fraca deve ser adicionado mais " + tamanhoMinimo(senha) + " caracteres para tornala forte";
+            return "A senha esta fraca você precisa digitar "+tamanhoMinimo(senha)+" caracteres para deixar ela forte.";
         }
-        return "Senha forte";
+        return "Senha Forte";
     }
 
     private boolean verifica(){
-        return !senha.matches("(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{6,}");
+        return !senha.matches("(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()-+])(?=\\S+$).{6,}");
     }
 
     private int tamanhoMinimo(String senha){
